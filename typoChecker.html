@@ -4,9 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="jquery-linedtextarea/jquery-linedtextarea.css">
+  <link rel="stylesheet" href="typoChecker.css">
+  
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>文章比較</h1>
+  <div class="contents">
+    <div class="main">
+      <h2>お手本</h2>
+      <textarea class="lined" id="textareaLeft" cols="10" rows="39"></textarea>
+    </div>
+    <div class="main">
+      <h2>自分が書いたもの</h2>
+      <textarea class="lined" id="textareaRight" cols="10" rows="39"></textarea>
+    </div>
+  </div>
+  <div class="contents">
+    <div class="maina">
+      <h2></h2>
+      <div name="error" id="error"></div>
+    <div>
+    <div class="main">
+      <h2></h2>
+      <div name="match" id="match"></div>
+    </div>
+  </div>
+    
+
+
+
+
+  <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="jquery-linedtextarea/jquery-linedtextarea.js"></script>
+  <script type="text/javascript" src="diff-match-patch/javascript/diff_match_patch.js"></script>
+  <script type="text/javascript" src="typoChecker.js"></script>
 </body>
 </html>

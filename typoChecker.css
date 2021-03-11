@@ -1,0 +1,32 @@
+body {
+  width: 93%;
+  margin-right: auto;
+  margin-left: auto;
+}
+h1, h2 {
+  text-align: center;
+}
+.contents {
+  display: flex;
+}
+.main {
+  width: 50%
+}
+textarea{
+  width: 95%;
+ 
+}
+
+.errorerea {
+  font-size: 10pt;
+  white-space: pre-wrap;
+  line-height: 15px;
+  
+  font-family: monospace;
+}
+.error, .match {
+  margin-top: 3%;
+  font-size: 50px;
+  white-space: pre-wrap;
+  line-height: 50px;
+}
