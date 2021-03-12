@@ -1248,7 +1248,7 @@ diff_match_patch.prototype.diff_xIndex = function(diffs, loc) {
  * @param {!Array.<!diff_match_patch.Diff>} diffs Array of diff tuples.
  * @return {string} HTML representation.
  */
-diff_match_patch.prototype.diff_prettyHtml = function(diffs) {
+ diff_match_patch.prototype.diff_prettyHtml = function(diffs) {
   var html = [];
   var pattern_amp = /&/g;
   var pattern_lt = /</g;

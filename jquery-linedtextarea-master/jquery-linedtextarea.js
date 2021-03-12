@@ -52,6 +52,7 @@
 				if ( lineNo == opts.selectedLine )
 					codeLines.append("<div class='lineno lineselect'>" + lineNo + "</div>");
 				else
+					
 					codeLines.append("<div class='lineno'>" + lineNo + "</div>");
 				
 				lineNo++;
@@ -68,7 +69,7 @@
 			var textarea = $(this);
 			
 			/* Turn off the wrapping of as we don't want to screw up the line numbers */
-			textarea.attr("wrap", "soft");
+			textarea.attr("wrap", "hard");
 			textarea.css({resize:'none'});
 			var originalTextAreaWidth	= textarea.outerWidth();
 

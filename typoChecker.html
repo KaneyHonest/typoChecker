@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="jquery-linedtextarea-master/jquery-linedtextarea.css">
   <link rel="stylesheet" href="typoChecker.css">
-  
-  <title>Document</title>
+
+  <title>文章比較ツール</title>
 </head>
 <body>
-  <h1>文章比較</h1>
+  <h1>文章比較ツール</h1>
+  <h3>お手本から削除された文字を赤色で、追加された文字を緑色で表示します<br>40行目以降の最後の行が改行だった場合にうまく機能しないので、最後の行の改行を削除してからお使いください</h4>
   <div class="contents">
     <div class="main">
       <h2>お手本</h2>
-      <textarea class="lined" id="textareaLeft" cols="10" rows="39"></textarea>
+      <textarea class="lined" id="textareaLeft" cols="50" rows="40"></textarea>
     </div>
     <div class="main">
       <h2>自分が書いたもの</h2>
-      <textarea class="lined" id="textareaRight" cols="10" rows="39"></textarea>
+      <textarea class="lined" id="textareaRight" cols="50" rows="40"></textarea>
     </div>
   </div>
-  <div class="contents">
-    <div class="maina">
-      <h2></h2>
-      <div name="error" id="error"></div>
-    <div>
-    <div class="main">
-      <h2></h2>
-      <div name="match" id="match"></div>
-    </div>
-  </div>
-    
-
-
-
+  <footer>
+    <p>Copyright 2021 Kaney Honest　Apache License, Version 2.0</p>
+    <p>Using library on
+      <a href="https://github.com/google/diff-match-patch" target="_blank">google/diff-match-patch</a> and 
+      <a href="https://github.com/cotenoni/jquery-linedtextarea" target="_blank">jquery-linedtextarea</a>
+    </p>
+  </footer>
+  
+  
 
   <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="jquery-linedtextarea-master/jquery-linedtextarea.js"></script>

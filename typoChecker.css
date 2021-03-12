@@ -3,30 +3,41 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-h1, h2 {
+
+h1, h2, h3 {
   text-align: center;
 }
+
 .contents {
   display: flex;
 }
+
 .main {
   width: 50%
 }
+
 textarea{
   width: 95%;
- 
+  white-space: pre-wrap;  
 }
 
-.errorerea {
+.textareaBack {
+  word-break: break-word;
+  overflow: auto;
+  margin-top: 0.1%;
+  height: 601px;
+  margin-left: 60px;
+  width: calc( 88.35% / 2 - 73px);
+  padding: 3px;
+  z-index: -1;
+  position: absolute;
   font-size: 10pt;
   white-space: pre-wrap;
   line-height: 15px;
-  
-  font-family: monospace;
+  font-family: sans-serif;
+  color: initial;
 }
-.error, .match {
-  margin-top: 3%;
-  font-size: 50px;
-  white-space: pre-wrap;
-  line-height: 50px;
+
+footer {
+  text-align: center;
 }
