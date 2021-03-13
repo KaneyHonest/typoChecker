@@ -1,31 +1,34 @@
 'use strict';
+
+//行数表示
 $(function(){
   $(".lined").linedtextarea(
   );
   
 });
 $(function(){
+  //textareaの裏にdivタグ生成
   $(".linedtextarea").prepend('<div class="null"></div>');
   $(".null").prepend('<div class="textareaBack"></div>');
   $(".textareaBack").each(function(i) {
     var leftRight = ['Left', 'Right'];
     $(this).attr('id', 'textareaBack' + leftRight[i]);
-    $(this).addClass("scroll" + leftRight[i]);
+    $(this).addClass("backScroll" + leftRight[i]);
   });
    
-  var scrollLeft = $(".scrollLeft");
-  var scrollRight = $(".scrollRight");
-
-  var leftarea = $('#textareaBackLeft');
-  var rightarea = $('#textareaBackRight');
+  var leftareaBack = $('#textareaBackLeft');
+  var rightareaBack = $('#textareaBackRight');
 
   var textareaLeft = $('#textareaLeft');
   var textareaRight = $('#textareaRight');
    
+  //textareaにイベントが発生したなら
   textareaLeft.on('input', textMatch);
   textareaRight.on('input', textMatch);
    
   function textMatch() {
+
+    //textareaの背景と文字を透明化
     $(".lined").css('background-color', 'transparent');
     $(".lined").css('color', 'transparent');
     $(".lined").css('caret-color', 'black');
@@ -33,14 +36,15 @@ $(function(){
     var leftValue = textareaLeft.val();
     var rightValue = textareaRight.val();
     
+    //差分を求めてtextareaの裏に表示
     var dmp = new diff_match_patch();
     
     var diffs = dmp.diff_main( leftValue, rightValue );
-    leftarea.html( b(diffs) );
+    leftareaBack.html( diff_colorRed(diffs) );
     var diffs = dmp.diff_main( rightValue, leftValue );
-    rightarea.html( a(diffs) );
+    rightareaBack.html( diff_colorGreen(diffs) );
     
-    function a(diffs) {
+    function diff_colorGreen(diffs) {
       var html = [];
       var pattern_amp = /&/g;
       var pattern_lt = /</g;
@@ -66,7 +70,7 @@ $(function(){
       return html.join('');
     };
     
-    function b(diffs) {
+    function diff_colorRed(diffs) {
       var html = [];
       var pattern_amp = /&/g;
       var pattern_lt = /</g;
@@ -93,14 +97,19 @@ $(function(){
     };
   }
 
+  var backScrollLeft = $(".backScrollLeft");
+  var backScrollRight = $(".backScrollRight");
+
+  //textareaとスクロール対応
   textareaRight.scroll(function() {
     var textareaScrollTopRight = $(this).scrollTop();
-    scrollRight.scrollTop(textareaScrollTopRight);
+    backScrollRight.scrollTop(textareaScrollTopRight);
   });
 
   textareaLeft.scroll(function() {
     var textareaScrollTopLeft = $(this).scrollTop();
-    scrollLeft.scrollTop(textareaScrollTopLeft);
+    backScrollLeft.scrollTop(textareaScrollTopLeft);
   });
+  
 
 });
