@@ -5,7 +5,11 @@
 
 ２つのtextareaの文章を比較するツールです。
 
-## using library
+## Demo
+
+[Click here](https://kaneyhonest.github.io/typoChecker/)
+
+## Using library
 
 [jQuery](https://jquery.com)
 
