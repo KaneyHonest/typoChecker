@@ -4,7 +4,7 @@ body {
   margin-left: auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .copybtn {
   text-align: center;
 }
 
@@ -40,4 +40,12 @@ textarea{
 
 footer {
   text-align: center;
+}
+p {
+  line-height: 3px;
+}
+
+button {
+  margin-top: 5px;
+  font-size: 18px
 }

@@ -11,15 +11,21 @@
 </head>
 <body>
   <h1>文章比較ツール</h1>
-  <h3>お手本から削除された文字を赤色で、追加された文字を緑色で表示します<br>40行目以降の最後の行が改行だった場合にうまく機能しないので、ctrl+⬇で最後の行に移動して改行を消してお使いください</h4>
+  <h3>お手本から削除された文字を赤色で、追加された文字を緑色で表示します<br>40行目以降の最後の行が改行だった場合に１行ずれてしまうので、ctrl+⬇で最後の行に移動して改行を消してお使いください</h4>
   <div class="contents">
     <div class="main">
       <h2>お手本</h2>
       <textarea class="lined" id="textareaLeft" cols="50" rows="40"></textarea>
+      <div class="copybtn">
+        <button type="button" id="copybtnLeft">コピーする</button>
+      </div>
     </div>
     <div class="main">
       <h2>自分が書いたもの</h2>
       <textarea class="lined" id="textareaRight" cols="50" rows="40"></textarea>
+      <div class="copybtn">
+        <button type="button" id="copybtnRight">コピーする</button>
+      </div>
     </div>
   </div>
   <footer>

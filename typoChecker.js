@@ -21,6 +21,20 @@ $(function(){
 
   var textareaLeft = $('#textareaLeft');
   var textareaRight = $('#textareaRight');
+
+  var backScrollLeft = $(".backScrollLeft");
+  var backScrollRight = $(".backScrollRight");
+
+  //textareaとスクロール対応
+  textareaRight.scroll(function() {
+    var textareaScrollTopRight = textareaRight.scrollTop();
+    backScrollRight.scrollTop(textareaScrollTopRight);
+  });
+
+  textareaLeft.scroll(function() {
+    var textareaScrollTopLeft = textareaLeft.scrollTop();
+    backScrollLeft.scrollTop(textareaScrollTopLeft);
+  });
    
   //textareaにイベントが発生したなら
   textareaLeft.on('input', textMatch);
@@ -95,21 +109,27 @@ $(function(){
       }
       return html.join('');
     };
+
+    //イベント時もスクロール反応
+    var textareaScrollTopRight = textareaRight.scrollTop();
+    backScrollRight.scrollTop(textareaScrollTopRight);
+
+    var textareaScrollTopLeft = textareaLeft.scrollTop();
+    backScrollLeft.scrollTop(textareaScrollTopLeft);
   }
 
-  var backScrollLeft = $(".backScrollLeft");
-  var backScrollRight = $(".backScrollRight");
+  //textareaからコピーする
+  $('#copybtnLeft').on('click', function() {
+    textareaLeft.select();
+    document.execCommand('copy');
+  })
 
-  //textareaとスクロール対応
-  textareaRight.scroll(function() {
-    var textareaScrollTopRight = $(this).scrollTop();
-    backScrollRight.scrollTop(textareaScrollTopRight);
-  });
+  $('#copybtnRight').on('click', function() {
+    textareaRight.select();
+    document.execCommand('copy');
+  })
 
-  textareaLeft.scroll(function() {
-    var textareaScrollTopLeft = $(this).scrollTop();
-    backScrollLeft.scrollTop(textareaScrollTopLeft);
-  });
+  
   
 
 });
